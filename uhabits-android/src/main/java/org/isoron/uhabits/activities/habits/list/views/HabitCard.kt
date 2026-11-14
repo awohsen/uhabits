@@ -227,7 +227,11 @@ class HabitCardView(
         this.getLocationInWindow(containerLocation)
         val relButtonLocation = getRelativeButtonLocation(date)
         val windowInsets = rootWindowInsets
-        val xInset = windowInsets?.displayCutout?.safeInsetLeft ?: 0
+        val xInset = if (SDK_INT >= Build.VERSION_CODES.P) {
+            windowInsets?.displayCutout?.safeInsetLeft ?: 0
+        } else {
+            0
+        }
         val yInset = if (SDK_INT <= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
             windowInsets?.systemWindowInsetTop ?: 0
         } else {

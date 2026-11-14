@@ -53,7 +53,7 @@ android {
     defaultConfig {
         versionCode = 20302
         versionName = "2.3.2"
-        minSdk = 28
+        minSdk = 27
         targetSdk = 36
         applicationId = "org.isoron.uhabits"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
